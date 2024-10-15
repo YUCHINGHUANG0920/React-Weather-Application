@@ -1,13 +1,13 @@
 export const DEFAULT_PLACE = {
-  name: 'London',
-  place_id: 'london',
-  adm_area1: 'England',
-  adm_area2: 'Greater London',
-  country: 'United Kingdom',
-  lat: '51.50853N',
-  lon: '0.12574W',
-  timezone: 'Europe/London',
-  type: 'settlement',
+  name: "New York",
+  place_id: "new-york-city",
+  adm_area1: "New York",
+  adm_area2: null,
+  country: "United States of America",
+  lat: "40.71427N",
+  lon: "74.00597W",
+  timezone: "America/New_York",
+  type: "settlement",
 };
 export const MEASUREMENT_SYSTEMS = {
   AUTO: 'auto',

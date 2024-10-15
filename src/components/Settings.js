@@ -1,16 +1,13 @@
 import { useContext, useState } from 'react';
-import ThemeContextContext from '../context/theme.context';
 import { MEASUREMENT_SYSTEMS } from '../constants';
 import '../styles/components/Settings.scss';
 import WeatherContext from '../context/weather.context';
+import ThemeContext from '../context/theme.context';
 
 function Settings() {
   const [openSettings, setOpenSettings] = useState(false);
-  const { dark, setDark, saveThemeToLocalStorage } = useContext(
-    ThemeContextContext
-  );
-  const { measurementSystem, setMeasurementSystem } =
-    useContext(WeatherContext);
+  const { dark, setDark } = useContext(ThemeContext);
+  const { measurementSystem, setMeasurementSystem } = useContext(WeatherContext);
 
   const changeMeasurementSystem = (system) => {
     setMeasurementSystem(system);
@@ -19,7 +16,6 @@ function Settings() {
 
   const toggleTheme = () => {
     setDark((prevDark) => !prevDark);
-    saveThemeToLocalStorage(!dark);
   };
 
   return (
@@ -34,11 +30,8 @@ function Settings() {
           </div>
         </div>
       </div>
-      <div
-        className='settings-btn'
-        onClick={() => setOpenSettings((prevVal) => !prevVal)}
-      >
-        <i className={`bi bi-gear${openSettings ? '-fill' : ''}`}></i>
+      <div className='settings-btn' onClick={() => setOpenSettings((prevVal) => !prevVal)}>
+        <i className='bi bi-gear'></i>
       </div>
       <div className={`settings-menu ${openSettings ? 'open' : ''}`}>
         <div className='measurement-systems'>

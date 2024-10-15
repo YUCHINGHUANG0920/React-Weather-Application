@@ -1,14 +1,10 @@
-const { createContext, useState, useEffect } = require('react');
+import { createContext, useEffect, useState } from 'react';
 
 const ThemeContext = createContext();
 const THEME_KEY = 'theme';
 
 function ThemeProvider({ children }) {
   const [dark, setDark] = useState(true);
-
-  const saveThemeToLocalStorage = (theme) => {
-    localStorage.setItem(THEME_KEY, JSON.stringify(theme));
-  };
 
   useEffect(() => {
     const savedTheme = JSON.parse(localStorage.getItem(THEME_KEY));
@@ -22,12 +18,9 @@ function ThemeProvider({ children }) {
     ).matches;
     setDark(isSystemThemeDark === true);
   }, []);
+  
   return (
-    <ThemeContext.Provider
-      value={{ dark, setDark, saveThemeToLocalStorage }}
-    >
-      {children}
-    </ThemeContext.Provider>
+    <ThemeContext.Provider value={{ dark, setDark }}>{children}</ThemeContext.Provider>
   );
 }
 

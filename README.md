@@ -1,98 +1,23 @@
 # ReactJS Weather App
 
-Welcome to the ReactJS Weather App project! This application was built as part of a tutorial on my YouTube channel, [Code Explained](https://www.youtube.com/@CodeExplained). In this project, we will create a weather app using ReactJS and the Meteosource Weather API.
-
-Check out the full tutorial on YouTube: [ReactJS Weather App Tutorial](https://youtu.be/YxTkX_DDSGs).
-
-## Table of Contents
-
-- [Overview](#overview)
-- [Features](#features)
-- [Getting Started](#getting-started)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Dependencies](#dependencies)
-- [API Reference](#api-reference)
-- [Contributing](#contributing)
-- [License](#license)
-
 ## Overview
+This weather application is a simple dashboard built with React.js that displays the current weather conditions and provides hourly and daily weather forecasts for any selected location. It supports multiple measurement systems (e.g., metric, imperial) to display weather data. The app fetches weather data from the Meteosource Weather API, allowing users to input a location and view detailed weather information such as temperature, humidity, wind speed, UV index, and cloud coverage. This project demonstrates how to integrate a third-party API into an application.
 
-This project is a simple weather application built with ReactJS. It fetches weather data from the Meteosource Weather API and displays it in a user-friendly interface. This project aims to demonstrate how to integrate third-party APIs with React and how to build a complete application from scratch.
+## Prerequisites
+To fetch weather data, users must obtain a Meteosource Weather API key and store it in a .env file, naming the variable **REACT_APP_API_KEY**.
 
 ## Features
+- Current Weather Display: Shows the current weather conditions, including temperature, humidity, wind speed, and more.
+- Hourly Weather Forecast: Provides detailed hourly weather forecasts for the selected location.
+- Daily Weather Forecast: Displays a 21-day weather forecast for the selected location.
+- Measurement System: Automatically adjusts units (e.g., Celsius/Fahrenheit) based on the user's manual selection.
+- Light/Dark Mode: Automatically adjusts between light and dark themes based on user's manual selection.
 
-- Fetch and display current weather data for any location
-- User-friendly interface with styled-components
-- Responsive design
-- Error handling for API requests
+## Key Components:
+- CurrentWeather.js: Displays the current weather conditions, including various weather widgets such as temperature, wind speed, humidity, and visibility.
+- DailyForecastWidget.js / HourlyForecastWidget.js: Displays daily or hourly weather forecasts, setting the time and date formats.
+- WeatherIcon.js: Dynamically renders weather icons based on the icon_num value from the API data.
+- HorizontallyScrollable.js: Enables horizontal scrolling for displaying weather forecasts.
 
-## Getting Started
-
-Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
-
-### Prerequisites
-
-- Node.js (v14 or higher)
-- npm (v6 or higher) or yarn
-
-### Installation
-
-1. Clone the repository:
-    ```sh
-    git clone https://github.com/yourusername/reactjs-weather-app.git
-    cd reactjs-weather-app
-    ```
-
-2. Install the dependencies:
-    ```sh
-    npm install
-    # or
-    yarn install
-    ```
-
-3. Create a `.env` file in the root directory and add your Meteosource API key:
-    ```env
-    REACT_APP_WEATHER_API_KEY=your_api_key_here
-    ```
-
-### Usage
-
-1. Start the development server:
-    ```sh
-    npm start
-    # or
-    yarn start
-    ```
-
-2. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-## Dependencies
-
-This project uses the following dependencies:
-
-- **axios**: A promise-based HTTP client for making requests to the Meteosource Weather API. It simplifies the process of handling HTTP requests and responses.
-- **bootstrap-icons**: A library of free, high-quality icons designed for Bootstrap, but usable in any project. These icons enhance the visual appeal and user experience of the app.
-
-## API Reference
-
-This project uses the Meteosource Weather API to fetch weather data. You can find more information and sign up for an API key at the [Meteosource Weather API page](https://rapidapi.com/MeteosourceWeather/api/ai-weather-by-meteosource).
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository.
-2. Create your feature branch: `git checkout -b feature/my-new-feature`.
-3. Commit your changes: `git commit -m 'Add some feature'`.
-4. Push to the branch: `git push origin feature/my-new-feature`.
-5. Submit a pull request.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
-
----
-
-Happy coding! If you have any questions, feel free to reach out or leave a comment on the [YouTube tutorial](https://youtu.be/YxTkX_DDSGs).
+Context:
+The app utilizes React’s Context API to provide global state management for both weather data and theme (light/dark mode). It handles the fetching and updating of weather data and theme settings throughout the application.

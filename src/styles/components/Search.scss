@@ -12,7 +12,7 @@
   }
   .search-icon {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
 
     font-size: 1.3rem;
@@ -23,6 +23,7 @@
     color: var(--primary-text-color);
     border: none;
     outline: none;
+    justify-content: left;
     font-size: 1rem;
   }
 }

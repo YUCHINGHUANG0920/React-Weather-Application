@@ -20,21 +20,21 @@ $height: 250px;
 
     .value {
       .real {
-        font-size: 3rem;
+        font-size: 4rem;
       }
       .feels-like {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
       }
     }
     .summary {
       margin-top: 1rem;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
     }
   }
   .other-infos {
     flex: 1;
     height: auto;
-    margin-left: 1rem;
+    margin-left: 2rem;
 
     display: flex;
     justify-content: center;
@@ -59,10 +59,11 @@ $height: 250px;
 
         .info {
           display: flex;
-          font-size: 1.25rem;
-          margin-bottom: 0.5rem;
+          font-size: 1.5rem;
+          margin-bottom: 0.4rem;
           .icon {
-            margin-right: 0.5rem;
+            margin-right: 0.8rem;
+            font-size: 26px;
           }
         }
       }

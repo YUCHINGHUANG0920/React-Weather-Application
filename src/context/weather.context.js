@@ -23,32 +23,20 @@ function WeatherProvider({ children }) {
     async function _getWeatherData() {
       setLoading(true);
 
-      const cw = await getWeatherData(
-        'current',
-        place.place_id,
-        measurementSystem
-      );
+      const cw = await getWeatherData('current', place.place_id, measurementSystem);
       setCurrentWeather(cw.current);
       setUnits(UNITS[cw.units]);
 
-      const hf = await getWeatherData(
-        'hourly',
-        place.place_id,
-        measurementSystem
-      );
+      const hf = await getWeatherData('hourly', place.place_id, measurementSystem);
       setHourlyForecast(hf.hourly.data);
 
-      const df = await getWeatherData(
-        'daily',
-        place.place_id,
-        measurementSystem
-      );
+      const df = await getWeatherData('daily', place.place_id, measurementSystem);
       setDailyForecast(df.daily.data);
 
       setLoading(false);
     }
     _getWeatherData();
-  }, [place, measurementSystem]);
+  }, [place, measurementSystem]);  // useEffect: Dependency -> meaning: only when changing "place or measurementSystem", the system will render again
 
   return (
     <WeatherContext.Provider

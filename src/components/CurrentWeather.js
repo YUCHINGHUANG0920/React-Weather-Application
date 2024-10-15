@@ -16,8 +16,10 @@ function CurrentWeather({ data }) {
     visibility,
     wind,
   } = data;
+
   const { units } = useContext(WeatherContext);
 
+  // for other Infor at UpRight corner
   const otherInfoWidgets = [
     {
       id: 0,
@@ -70,12 +72,8 @@ function CurrentWeather({ data }) {
           <WeatherIcon iconNumber={icon_num} summary={summary} />
         </div>
         <div className='value'>
-          <div className='real'>
-            {Math.round(temperature)} {units.temperature}
-          </div>
-          <div className='feels_like'>
-            feels like {Math.round(feels_like)} {units.temperature}
-          </div>
+          <div className='real'>{Math.round(temperature)} {units.temperature}</div>
+          <div className='feels_like'>feels like {Math.round(feels_like)} {units.temperature}</div>
         </div>
         <div className='summary'>{summary}</div>
       </div>
