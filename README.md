@@ -1,4 +1,4 @@
-# React Weather App
+# React Weather Application
 
 ## Overview
 This weather application is a simple dashboard built with React.js that displays the current weather conditions and provides hourly and daily weather forecasts for any selected location. It supports multiple measurement systems (e.g., metric, imperial) to display weather data. The app fetches weather data from the Meteosource Weather API, allowing users to input a location and view detailed weather information such as temperature, humidity, wind speed, UV index, and cloud coverage. This project demonstrates how to integrate a third-party API into an application.
